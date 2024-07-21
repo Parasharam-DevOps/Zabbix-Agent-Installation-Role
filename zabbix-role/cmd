@@ -1,1 +1,6 @@
+ansible-playbook -i zabbix-role/tests/hosts zabbix-role/tests/test.yml --vault-password-file vault_password.txt --extra-vars "ansible_become_pass=admin@123"
+https://repo.zabbix.com/zabbix/5.4/rhel/7/x86_64/
+ansible-playbook deploy.yml --ask-vault-pass
+
+
 
