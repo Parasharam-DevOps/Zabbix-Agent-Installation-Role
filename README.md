@@ -49,6 +49,19 @@ This documentation provides steps to change SSH configuration to enable password
    ```bash
    sudo systemctl restart sshd
    ```
+## Disable Host Key Checking & Configure Ansible Inventory Plugins
+
+1. **Disable Host Key Checking:**
+   - To disable host key checking, modify the Ansible configuration. Ensure that `host_key_checking` is set to `False` in your Ansible configuration file (`ansible.cfg`).
+
+   ![Disable Host Key Checking](https://github.com/user-attachments/assets/56c1a6f4-8a0b-4ed9-aeac-77cd939642ad)
+
+2. **Enable Inventory Plugins:**
+   - In your Ansible configuration file (`ansible.cfg`), add or modify the `enable_plugins` section to include the necessary plugins:
+     ```ini
+     [defaults]
+     enable_plugins = aws_ec2, yaml, ini
+     ```
 
 By following these steps, you will enable password authentication for SSH on your AWS Cloud machine and ensure that `ChallengeResponseAuthentication` is disabled.
 
