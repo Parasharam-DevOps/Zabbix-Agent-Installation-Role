@@ -1,0 +1,27 @@
+---
+- name: Copy Zabbix package to the server
+  copy:
+    src: /home/parsu/zabbix/zabbix-role/files/zabbix-agent-6.4.0-release1.el9.x86_64.rpm
+    dest: /tmp/zabbix-agent-6.4.0-release1.el9.x86_64.rpm
+
+- name: Install Zabbix package RPM
+  yum:
+    name: /tmp/zabbix-agent-6.4.0-release1.el9.x86_64.rpm
+    state: present
+    disable_gpg_check: yes
+
+- name: Configure Zabbix agent
+  template:
+    src: zabbix_agentd.conf.j2
+    dest: /etc/zabbix/zabbix_agentd.conf
+    owner: root
+    group: zabbix
+    mode: '0644'
+  notify:
+    - Restart Zabbix agent
+
+- name: Enable and start Zabbix agent service
+  service:
+    name: zabbix-agent
+    enabled: yes
+    state: started

@@ -1,0 +1,2 @@
+[all]
+server1 ansible_host=65.2.169.187 ansible_ssh_user=ninja ansible_ssh_pass=hitachi@123
