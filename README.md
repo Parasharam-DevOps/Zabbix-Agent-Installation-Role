@@ -65,4 +65,8 @@ This documentation provides steps to change SSH configuration to enable password
 
 By following these steps, you will enable password authentication for SSH on your AWS Cloud machine and ensure that `ChallengeResponseAuthentication` is disabled.
 
+## Reference DOCS
 
+https://www.digitalocean.com/community/cheatsheets/how-to-use-ansible-cheat-sheet-guide
+
+https://www.tecmint.com/use-ansible-vault-in-playbooks-to-protect-sensitive-data/
