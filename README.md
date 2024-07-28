@@ -160,11 +160,15 @@ Use the hosts file when running the Ansible playbook:
 ```bash
 ansible-playbook -i zabbix-role/tests/test.yml
 ```
-
 ## Reference Docs
 
-| Document                                                                                                  | Link                                                                                                                                   |
-|-----------------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------|
-| How to Use Ansible - Cheat Sheet Guide                                                                    | [How to Use Ansible - Cheat Sheet Guide](https://www.digitalocean.com/community/cheatsheets/how-to-use-ansible-cheat-sheet-guide)       |
-| Use Ansible Vault in Playbooks to Protect Sensitive Data                                                  | [Use Ansible Vault in Playbooks to Protect Sensitive Data](https://www.tecmint.com/use-ansible-vault-in-playbooks-to-protect-sensitive-data) |
-| Zabbix Official Repository |[Link](https://repo.zabbix.com/zabbix/)
+| Document                                                                                                  | Link                                                                                                                                |
+|-----------------------------------------------------------------------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------|
+| How to Use Ansible - Cheat Sheet Guide                                                                    | [Link](https://www.digitalocean.com/community/cheatsheets/how-to-use-ansible-cheat-sheet-guide)                                     |
+| Use Ansible Vault in Playbooks to Protect Sensitive Data                                                  | [Link](https://www.tecmint.com/use-ansible-vault-in-playbooks-to-protect-sensitive-data)                                            |
+| Zabbix Official Repository                                                                                | [Link](https://repo.zabbix.com/zabbix/)                                                                                             |
+| Official AWS CLI Installation Guide                                                                       | [Link](https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html)                                                |
+| Terraform Installation Guide                                                                              | [Link](https://developer.hashicorp.com/terraform/tutorials/aws-get-started/install-cli)                                             |
+| How to Setup Ansible AWS Dynamic Inventory                                                                | [Link](https://devopscube.com/setup-ansible-aws-dynamic-inventory/)                                                                 |
+
+
