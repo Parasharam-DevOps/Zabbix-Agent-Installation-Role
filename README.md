@@ -29,6 +29,7 @@ terraform apply --auto-approve
 2. Output Public IPs
 
 Use the output.tf file to print the public IPs of the servers.
+
 ![image](https://github.com/user-attachments/assets/6ad07a4a-9e18-4236-a4b0-755d7c7c20d6)
 
 3. Verify Ansible Inventory
