@@ -22,6 +22,7 @@ In the Terraform code, add a group tag for your machines. This tag will be used 
 
 ```bash
 terraform apply --auto-approve
+```
 
 ![image](https://github.com/user-attachments/assets/f7e2b679-0749-4d52-9b83-b47eeb641e7d)
 
