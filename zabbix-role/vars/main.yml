@@ -1,6 +1,4 @@
 ---
 # vars file for zabbix-role
-zabbix_package_centos7: zabbix-release-6.0-4.el7.noarch.rpm
-zabbix_package_centos9: zabbix-release-6.0-5.el9.noarch.rpm
 time_out: 30
 zabbix_server: 172.16.7.92
