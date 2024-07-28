@@ -11,6 +11,7 @@ This document provides a step-by-step guide to install the Zabbix agent using an
 ## Steps
 
 ### 1. Create EC2 Instances using Terraform
+
 First, create two EC2 instances using the Terraform EC2 module available on GitHub. This module can be used for day-to-day instance creation for testing purposes.
 
 GitHub URL: [Terraform EC2 Module](https://github.com/Parasharam-DevOps/Terraform-Ec2-Module)
@@ -18,16 +19,19 @@ GitHub URL: [Terraform EC2 Module](https://github.com/Parasharam-DevOps/Terrafor
 In the Terraform code, add a group tag for your machines. This tag will be used in the Ansible dynamic inventory.
 
 #### Run Terraform Apply
+
 ```bash
 terraform apply --auto-approve
 
 ![image](https://github.com/user-attachments/assets/f7e2b679-0749-4d52-9b83-b47eeb641e7d)
 
 2. Output Public IPs
+
 Use the output.tf file to print the public IPs of the servers.
 ![image](https://github.com/user-attachments/assets/6ad07a4a-9e18-4236-a4b0-755d7c7c20d6)
 
 3. Verify Ansible Inventory
+
 Use the Ansible dynamic inventory plugin and assign the tag name for Zabbix installation. Verify the inventory using the following command:
 
 ```bash
@@ -35,17 +39,20 @@ ansible-inventory --graph
 ```
 ![image](https://github.com/user-attachments/assets/adb2d6a2-81cc-4301-b492-6669796aa688)
 
-5. Configure Ansible Playbook
+4. Configure Ansible Playbook
+
 Copy the group tag and paste it into the Ansible playbook located at /zabbix-role/tests/test.yml.
 
 ![image](https://github.com/user-attachments/assets/c732087c-7311-4059-b92b-fab235b93e14)
 
 5. Ansible Role Directory Structure
+
 Ensure your Ansible role directory structure is properly set up.
 
 ![image](https://github.com/user-attachments/assets/a92b21d1-3cbf-44a8-b85b-b5494068aef1)
 
 6. Run the Ansible Playbook
+
 Execute the Ansible playbook to install the Zabbix agent.
 
 ```bash
@@ -58,12 +65,14 @@ ansible-playbook zabbix-role/tests/test.yml
 
 # 7. Verify Zabbix Agent Status
 Check the status of the Zabbix agent on the server to ensure it is running correctly.
+
 ![image](https://github.com/user-attachments/assets/a05e72e7-3eb7-466b-b0b5-370555f64d4d)
 
 
 # Troubleshooting 
 
 For User & Password Based Authentication
+
 # AWS Cloud Machine SSH Configuration 
 
 This documentation provides steps to change SSH configuration to enable password authentication for a new user on an AWS Cloud machine.
@@ -129,16 +138,19 @@ By following these steps, you will enable password authentication for SSH on you
 **Username and Password Authentication**
 
 Create a hosts file for Ansible with the following content:
+
 ```bash
 [all]
 server1 ansible_host=65.2.169.187 ansible_ssh_user=ninja ansible_ssh_pass=admin@123
 ```
-Use the hosts file when running the Ansible playbook:
+**Use the hosts file when running the Ansible playbook:**
+
 ```bash
 ansible-playbook -i zabbix-role/tests/hosts zabbix-role/tests/test.yml --vault-password-file vault_password.txt --extra-vars "ansible_become_pass=admin@123"
 ```
 
 **Public Key Authentication**
+
 ```bash
 server1 ansible_host=35.166.148.190 ansible_user=ubuntu ansible_ssh_private_key_file=/home/parsu/Downloads/veeam.pem
 ```
